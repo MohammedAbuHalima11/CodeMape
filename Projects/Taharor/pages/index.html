@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang='ar' dir='rtl'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: 'Tajawal', sans-serif !important;
+        }
+    </style>
+    <title>لوحة التحكم</title>
+</head>
+
+<body>
+    <div class="container-page min-h-screen flex flex-row">
+        <aside class=" bg-[#075E66] min-h-screen w-56 pt-4">
+            <img src="../assets/images/logoo_dashbord.png" alt="Logoo Dashbord" class="w-24 h-12 m-auto mb-6">
+
+            <div class="menu-items flex flex-col justify-start gap-0.5">
+                <a href="index.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a] ">
+                    <img src="../assets/images/category.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">الرئيسية</span>
+                </a>
+                <a href="customer-management.html" id="customer-management"
+                    class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/people.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة العملاء</span>
+                </a>
+                <a href="specialist-management.html"
+                    class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/doctor 1.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة الأخصائيين</span>
+                </a>
+                <a href="sessions.html" class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/message-favorite.png" alt="" class="max-w-4 max-h-4 ">
+                    <span class="text-white font-normal text-base">الجلسات</span>
+                </a>
+                <div id="support-programs" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer ">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/like.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">برامج الدعم</span>
+                                <i id="support-programs-arrow" class="fa-solid fa-angle-down fa-sm pr-20"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-support-programs" class=" hidden flex flex-col items-start gap-2.5 pb-1.5">
+                        <a href="treatment-programs.html" class="pr-4">
+                            <span class=" font-normal text-base text-[#075E66]">البرامج العلاجية</span>
+                        </a>
+                        <a href="courses.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">الدورات</span>
+                        </a>
+                        <a href="meetings.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">اللقاءات</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="reports-statistics.html"
+                    class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/chart.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">التقارير والإحصائيات</span>
+                </a>
+                <a href="conversation-management.html"
+                    class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/messages.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة المحادثات</span>
+                </a>
+                <div id="notifications" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/like.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">الإشعارات</span>
+                                <i id="notifications-arrow" class="fa-solid fa-angle-down fa-sm pr-[87px]"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-notifications" class="hidden flex flex-col items-start gap-2.5 pb-1.5 bg-[#81C6C3]">
+                        <a href="system-notifications.html" class="pr-4 hover:bg-[#81C6C3]">
+                            <span class=" font-normal text-base text-[#075E66]">إشعارات النظام</span>
+                        </a>
+                        <a href="send-notifications.html" class="pr-4 hover:bg-[#81C6C3]">
+                            <span class="text-[#075E66] font-normal text-base">إرسال إشعارات</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="pages-link" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/message-edit.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">الصفحات</span>
+                                <i id="pages-arrow" class="fa-solid fa-angle-down fa-sm pr-[87px]"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-pages" class="hidden flex flex-col items-start gap-2.5 pb-1.5 bg-[#81C6C3]">
+                        <a href="frequently-asked-questions.html" class="pr-4">
+                            <span class=" font-normal text-base text-[#075E66]">الأسئلة الأكثر تداولاً</span>
+                        </a>
+                        <a href="terms-conditions.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">الشروط و الأحكام</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="settings.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/setting-2.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">الإعدادات</span>
+                </a>
+                <a href="log-out.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/logout.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">تسجيل الخروج</span>
+                </a>
+            </div>
+        </aside>
+        <div class="wrapper-page bg-[#FAFAFA] flex-1">
+            <header
+                class="w-full h-20 border-b-2 border-b-[#E5E6EB] flex flex-row justify-between items-center pr-6 pl-6">
+                <div class="relative">
+                    <input type="text" name="search" id="search" placeholder="إبحث عن أي شيء داخل المنصة"
+                        class="bg-white border border-2 border-[#E5E6EB] w-96 h-10 rounded-xl pr-8 focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out">
+                    <i class="fa-solid fa-magnifying-glass fa-lg absolute right-1.5 top-5.5"
+                        style="color: rgb(134, 144, 156);"></i>
+                </div>
+                <div class="flex flex-row justify-between items-center gap-4 relative">
+                    <div
+                        class="bg-white border border-2 border-[#CCCCCC] rounded-lg w-10 h-12 pt-2.5 pr-1 relative cursor-pointer">
+                        <i class="fa-regular fa-bell fa-xl" style="color: rgb(142, 142, 142);"></i>
+                        <img src="../assets/images/header/Rectangle 73.png" alt="" class="absolute top-1">
+                        <span class="absolute -top-0.5 left-5 text-white">0</span>
+                    </div>
+                    <img src="../assets/images/header/Ellipse 5.png" alt="">
+                    <p class="flex flex-col font-medium text-base">
+                        <span class="text-sm">مرحباَ</span>
+                        <span>محمد</span>
+                    </p>
+                    <button id="profile-menu-logout-btn" class="cursor-pointer">
+                        <i class="fa-solid fa-angle-down fa-xl" style="color: rgb(142, 142, 142);"></i>
+                    </button>
+                    <div id="profile-menu-logout"
+                        class="hidden bg-white w-full pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl absolute top-15 z-50">
+                        <a href="" class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                            <p class="font-medium text-base text-[#4E5969]">الحساب الشخصي</p>
+                            <i class="fa-regular fa-circle-user fa-xl" style="color: rgb(78, 89, 105);"></i>
+                        </a>
+                        <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                        <a href="login.html"
+                            class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                            <p class="font-medium text-base text-[#075E66]">تسجيل الخروج</p>
+                            <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 fa-xl"
+                                style="color: rgb(7, 94, 102);"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="main-wrraper flex flex-col gap-4 p-6">
+                    <div
+                        class="monthly-summary-container bg-white w-full p-4 border border-2 border-[#E5E6EB] rounded-xl flex flex-col gap-7">
+                        <div class="info flex flex-row justify-between items-center">
+                            <div class="monthly-summary-latest-update">
+                                <p class="font-bold text-[#4E5969] text-xl
+">ملخص الشهر</p>
+                                <p class="font-medium text-[#86909C] text-sm mt-2
+">آخر تحديث: منذ <span>5</span> دقائق</p>
+                            </div>
+                            <div class="date">
+                                <p class="font-bold text-[#86909C] text-base
+">يونيو 2025</p>
+                            </div>
+                        </div>
+                        <div class="total-menu flex flex-row justify-between items-center">
+                            <div
+                                class="number-users border border-2 border-[#E5E6EB] rounded-xl flex flex-row justify-between items-center w-52 p-4">
+                                <img src="../assets/images/dashpord/Frame 1300193069.png" alt="">
+                                <div>
+                                    <span class="text-[#075E66] font-bold text-xl">5765</span>
+                                    <p class="text-[#86909C] font-medium text-sm">عدد المستخدمين</p>
+                                </div>
+                            </div>
+                            <div
+                                class="number-specialists border border-2 border-[#E5E6EB] rounded-xl flex flex-row justify-between items-center w-52 p-4">
+                                <img src="../assets/images/dashpord/Frame 1300193069 (1).png" alt="">
+                                <div>
+                                    <span class="text-[#075E66] font-bold text-xl">254</span>
+                                    <p class="text-[#86909C] font-medium text-sm">عدد الأخصائيين</p>
+                                </div>
+                            </div>
+                            <div
+                                class="number-sessions border border-2 border-[#E5E6EB] rounded-xl flex flex-row justify-between items-center w-52 p-4">
+                                <img src="../assets/images/dashpord/Frame 1300193069 (2).png" alt="">
+                                <div>
+                                    <span class="text-[#075E66] font-bold text-xl">154</span>
+                                    <p class="text-[#86909C] font-medium text-sm">عدد الجلسات</p>
+                                </div>
+                            </div>
+                            <div
+                                class="number-courses border border-2 border-[#E5E6EB] rounded-xl flex flex-row justify-between items-center w-52 p-4">
+                                <img src="../assets/images/dashpord/Frame 1300193069 (3).png" alt="">
+                                <div>
+                                    <span class="text-[#075E66] font-bold text-xl">254</span>
+                                    <p class="text-[#86909C] font-medium text-sm">عدد الدورات</p>
+                                </div>
+                            </div>
+                            <div
+                                class="total-profits border border-2 border-[#E5E6EB] rounded-xl flex flex-row justify-between items-center w-52 p-4">
+                                <img src="../assets/images/dashpord/Frame 1300193069 (4).png" alt="">
+                                <div>
+                                    <span class="text-[#075E66] font-bold text-xl">254</span>
+                                    <p class="text-[#86909C] font-medium text-sm">إجمالي الأرباح</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="border border-[#E5E6EB]">
+                        <div class="more-reports flex flex-row justify-center gap-5 cursor-pointer">
+                            <span class="text-[#075E66] font-medium text-lg
+                                                            
+                                                            ">المزيد من التقارير</span>
+                            <i class="fa-solid fa-angle-down fa-rotate-90 fa-lg mt-1.5"
+                                style="color: rgb(7, 94, 102);"></i>
+                        </div>
+                    </div>
+                    <div class="latest-sessions-alerts flex flex-row justify-between items-start gap-4">
+                        <div
+                            class="latest-sessions-container bg-white w-full p-4 border border-2 border-[#E5E6EB] rounded-xl flex flex-col gap-7">
+                            <div class="info flex flex-row justify-between items-center">
+                                <div class="flex flex-row justify-between items-center gap-2">
+                                    <img src="../assets/images/dashpord/message-favorite (1).png" alt="" class="mt-2">
+                                    <p class="font-bold text-[#4E5969] text-xl">أحدث الجلسات</p>
+                                </div>
+                                <div class="date">
+                                    <p class="font-bold text-[#86909C] text-base
+                        ">يونيو 2025</p>
+                                </div>
+                            </div>
+                            <div class="menu flex flex-col justify-between items-center gap-3">
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/header/Ellipse 5.png" alt="">
+                                        <div>
+                                            <p class="font-medium text-base text-[#1D2129]">محمد ابو حليمة</p>
+                                            <p class="font-normal text-sm text-[#4E5969]">مع الأخصائي: هاشم ناجي</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-[#075E66] text-lg">126ر.س</p>
+                                        <p class="font-normal text-[#4E5969] text-xs">منذ 5 دقائق</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/header/Ellipse 5.png" alt="">
+                                        <div>
+                                            <p class="font-medium text-base text-[#1D2129]">محمد ابو حليمة</p>
+                                            <p class="font-normal text-sm text-[#4E5969]">مع الأخصائي: هاشم ناجي</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-[#075E66] text-lg">126ر.س</p>
+                                        <p class="font-normal text-[#4E5969] text-xs">منذ 5 دقائق</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/header/Ellipse 5.png" alt="">
+                                        <div>
+                                            <p class="font-medium text-base text-[#1D2129]">محمد ابو حليمة</p>
+                                            <p class="font-normal text-sm text-[#4E5969]">مع الأخصائي: هاشم ناجي</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-[#075E66] text-lg">126ر.س</p>
+                                        <p class="font-normal text-[#4E5969] text-xs">منذ 5 دقائق</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/header/Ellipse 5.png" alt="">
+                                        <div>
+                                            <p class="font-medium text-base text-[#1D2129]">محمد ابو حليمة</p>
+                                            <p class="font-normal text-sm text-[#4E5969]">مع الأخصائي: هاشم ناجي</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-[#075E66] text-lg">126ر.س</p>
+                                        <p class="font-normal text-[#4E5969] text-xs">منذ 5 دقائق</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="alerts-container bg-white w-full p-4 border border-2 border-[#E5E6EB] rounded-xl flex flex-col gap-7">
+                            <div class="info flex flex-row justify-between items-center">
+                                <div class="flex flex-row justify-between items-center gap-2">
+                                    <i class="fa-regular fa-bell fa-xl " style="color: rgb(142, 142, 142);"></i>
+                                    <p class="font-bold text-[#4E5969] text-xl">التبيهات</p>
+                                </div>
+                                <div class="date">
+                                    <p class="font-bold text-[#86909C] text-base
+                        ">يونيو 2025</p>
+                                </div>
+                            </div>
+                            <div class="menu flex flex-col justify-between items-center gap-3">
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/dashpord/Frame 1300193088.png" alt="">
+                                        <div>
+                                            <p>
+                                                <span class="font-bold text-base">سلمى محمد</span> إشتركت في دورة التخلص
+                                                من الإكتئاب
+                                            </p>
+                                            <p class="text-[#4E5969] text-sm font-normal">
+                                                منذ <span>2</span> دقائق
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/dashpord/Frame 1300193088.png" alt="">
+                                        <div>
+                                            <p>
+                                                <span class="font-bold text-base">سلمى محمد</span> إشتركت في دورة التخلص
+                                                من الإكتئاب
+                                            </p>
+                                            <p class="text-[#4E5969] text-sm font-normal">
+                                                منذ <span>2</span> دقائق
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/dashpord/Frame 1300193088.png" alt="">
+                                        <div>
+                                            <p>
+                                                <span class="font-bold text-base">سلمى محمد</span> إشتركت في دورة التخلص
+                                                من الإكتئاب
+                                            </p>
+                                            <p class="text-[#4E5969] text-sm font-normal">
+                                                منذ <span>2</span> دقائق
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/dashpord/Frame 1300193088.png" alt="">
+                                        <div>
+                                            <p>
+                                                <span class="font-bold text-base">سلمى محمد</span> إشتركت في دورة التخلص
+                                                من الإكتئاب
+                                            </p>
+                                            <p class="text-[#4E5969] text-sm font-normal">
+                                                منذ <span>2</span> دقائق
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div
+                                    class="border border-2 border-[#E5E6EB] rounded-xl w-full flex flex-row justify-between items-center w-52 p-4">
+                                    <div class="flex flex-row gap-2">
+                                        <img src="../assets/images/dashpord/Frame 1300193088.png" alt="">
+                                        <div>
+                                            <p>
+                                                <span class="font-bold text-base">سلمى محمد</span> إشتركت في دورة التخلص
+                                                من الإكتئاب
+                                            </p>
+                                            <p class="text-[#4E5969] text-sm font-normal">
+                                                منذ <span>2</span> دقائق
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

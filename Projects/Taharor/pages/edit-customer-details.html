@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang='ar' dir='rtl'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    
+    <style>
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: 'Tajawal', sans-serif !important;
+        }
+    </style>
+    <title>تعديل تفاصيل العميل</title>
+</head>
+
+<body id="customer-details-page">
+    <div class="container-page min-h-screen flex flex-row">
+        <aside class=" bg-[#075E66] min-h-screen w-56 pt-4">
+            <img src="../assets/images/logoo_dashbord.png" alt="Logoo Dashbord" class="w-24 h-12 m-auto mb-6">
+
+            <div class="menu-items flex flex-col justify-start gap-0.5">
+                <a href="index.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a] ">
+                    <img src="../assets/images/category.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">الرئيسية</span>
+                </a>
+                <a href="customer-management.html" id="customer-management"
+                    class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/people.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة العملاء</span>
+                </a>
+                <a href="specialist-management.html"
+                    class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/doctor 1.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة الأخصائيين</span>
+                </a>
+                <a href="sessions.html" class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/message-favorite.png" alt="" class="max-w-4 max-h-4 ">
+                    <span class="text-white font-normal text-base">الجلسات</span>
+                </a>
+                <div id="support-programs" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer ">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/like.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">برامج الدعم</span>
+                                <i id="support-programs-arrow" class="fa-solid fa-angle-down fa-sm pr-20"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-support-programs" class=" hidden flex flex-col items-start gap-2.5 pb-1.5">
+                        <a href="treatment-programs.html" class="pr-4">
+                            <span class=" font-normal text-base text-[#075E66]">البرامج العلاجية</span>
+                        </a>
+                        <a href="courses.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">الدورات</span>
+                        </a>
+                        <a href="meetings.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">اللقاءات</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="reports-statistics.html"
+                    class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/chart.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">التقارير والإحصائيات</span>
+                </a>
+                <a href="conversation-management.html"
+                    class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/messages.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة المحادثات</span>
+                </a>
+                <div id="notifications" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/like.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">الإشعارات</span>
+                                <i id="notifications-arrow" class="fa-solid fa-angle-down fa-sm pr-[87px]"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-notifications" class="hidden flex flex-col items-start gap-2.5 pb-1.5 bg-[#81C6C3]">
+                        <a href="system-notifications.html" class="pr-4 hover:bg-[#81C6C3]">
+                            <span class=" font-normal text-base text-[#075E66]">إشعارات النظام</span>
+                        </a>
+                        <a href="send-notifications.html" class="pr-4 hover:bg-[#81C6C3]">
+                            <span class="text-[#075E66] font-normal text-base">إرسال إشعارات</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="pages-link" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/message-edit.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">الصفحات</span>
+                                <i id="pages-arrow" class="fa-solid fa-angle-down fa-sm pr-[87px]"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-pages" class="hidden flex flex-col items-start gap-2.5 pb-1.5 bg-[#81C6C3]">
+                        <a href="frequently-asked-questions.html" class="pr-4">
+                            <span class=" font-normal text-base text-[#075E66]">الأسئلة الأكثر تداولاً</span>
+                        </a>
+                        <a href="terms-conditions.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">الشروط و الأحكام</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="settings.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/setting-2.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">الإعدادات</span>
+                </a>
+                <a href="log-out.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/logout.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">تسجيل الخروج</span>
+                </a>
+            </div>
+        </aside>
+        <div class="wrapper-page bg-[#FAFAFA] flex-1">
+            <header
+                class="w-full h-20 border-b-2 border-b-[#E5E6EB] flex flex-row justify-between items-center pr-6 pl-6">
+                <div class="relative">
+                    <input type="text" name="search" id="search" placeholder="إبحث عن أي شيء داخل المنصة"
+                        class="bg-white border border-2 border-[#E5E6EB] w-96 h-10 rounded-xl pr-8 focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out">
+                    <i class="fa-solid fa-magnifying-glass fa-lg absolute right-1.5 top-5.5"
+                        style="color: rgb(134, 144, 156);"></i>
+                </div>
+                <div class="flex flex-row justify-between items-center gap-4 relative">
+                    <div
+                        class="bg-white border border-2 border-[#CCCCCC] rounded-lg w-10 h-12 pt-2.5 pr-1 relative cursor-pointer">
+                        <i class="fa-regular fa-bell fa-xl" style="color: rgb(142, 142, 142);"></i>
+                        <img src="../assets/images/header/Rectangle 73.png" alt="" class="absolute top-1">
+                        <span class="absolute -top-0.5 left-5 text-white">0</span>
+                    </div>
+                    <img src="../assets/images/header/Ellipse 5.png" alt="">
+                    <p class="flex flex-col font-medium text-base">
+                        <span class="text-sm">مرحباَ</span>
+                        <span>محمد</span>
+                    </p>
+                    <button id="profile-menu-logout-btn" class="cursor-pointer">
+                        <i class="fa-solid fa-angle-down fa-xl" style="color: rgb(142, 142, 142);"></i>
+                    </button>
+                    <div id="profile-menu-logout"
+                        class="hidden bg-white w-full pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl absolute top-15 z-50">
+                        <a href="" class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                            <p class="font-medium text-base text-[#4E5969]">الحساب الشخصي</p>
+                            <i class="fa-regular fa-circle-user fa-xl" style="color: rgb(78, 89, 105);"></i>
+                        </a>
+                        <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                        <a href="login.html"
+                            class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                            <p class="font-medium text-base text-[#075E66]">تسجيل الخروج</p>
+                            <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 fa-xl"
+                                style="color: rgb(7, 94, 102);"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="main-wrraper flex flex-col gap-4 p-6">
+                    <div class="info-page">
+                        <p class="text-[#4E5969] font-medium text-base">إدارة العملاء / تعديل تفاصيل العميل</p>
+                        <div class="flex flex-row justify-between mt-8 relative">
+                            <h1 class="font-bold text-xl text-[#86909C] pr-6">العميل</h1>
+                            <button id="customer-options-btn"
+                                class="bg-[#CAE5DE] w-36 flex flex-row justify-center items-center gap-2 h-10 border border-[#81C6C3] rounded-lg cursor-pointer  transition-all duration-300 active:scale-95">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.0999 10.65C10.0416 10.6417 9.9666 10.6417 9.89993 10.65C8.43327 10.6 7.2666 9.39998 7.2666 7.92498C7.2666 6.41665 8.48327 5.19165 9.99993 5.19165C11.5083 5.19165 12.7333 6.41665 12.7333 7.92498C12.7249 9.39998 11.5666 10.6 10.0999 10.65Z"
+                                        stroke="#075E66" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M15.6166 16.15C14.1333 17.5084 12.1666 18.3334 9.99997 18.3334C7.8333 18.3334 5.86663 17.5084 4.3833 16.15C4.46663 15.3667 4.96663 14.6 5.8583 14C8.14163 12.4834 11.875 12.4834 14.1416 14C15.0333 14.6 15.5333 15.3667 15.6166 16.15Z"
+                                        stroke="#075E66" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M9.99984 18.3334C14.6022 18.3334 18.3332 14.6025 18.3332 10.0001C18.3332 5.39771 14.6022 1.66675 9.99984 1.66675C5.39746 1.66675 1.6665 5.39771 1.6665 10.0001C1.6665 14.6025 5.39746 18.3334 9.99984 18.3334Z"
+                                        stroke="#075E66" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span class="text-[#075E66] font-medium text-sm">خيارات العميل</span>
+                            </button>
+                            <div id="customer-options-menu"
+                                class="hidden absolute left-0 top-12 bg-white pt-4 pb-4 border border-[#E5E6EB] rounded-xl w-48 z-50">
+                                <a href=""
+                                    class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                    <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.94501 2.69992L3.78751 9.21742C3.55501 9.46492 3.33001 9.95242 3.28501 10.2899L3.00751 12.7199C2.91001 13.5974 3.54001 14.1974 4.41001 14.0474L6.82501 13.6349C7.16251 13.5749 7.63501 13.3274 7.86751 13.0724L14.025 6.55492C15.09 5.42992 15.57 4.14742 13.9125 2.57992C12.2625 1.02742 11.01 1.57492 9.94501 2.69992Z"
+                                            stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M8.91748 3.7876C9.23998 5.8576 10.92 7.4401 13.005 7.6501"
+                                            stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M2.25 16.5H15.75" stroke="#86909C" stroke-width="1.5"
+                                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </a>
+                                <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+                                <button
+                                    class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                    <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                    <img src="../assets/images/customer-management/trash.png" alt="" class="w-5 h-5">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="customer-wrapper"
+                        class="bg-white pt-5 flex flex-col gap-6 p-6 rounded-b-xl border border-[#E5E6EB]">
+                        <div>
+                            <div class="flex flex-col justify-center items-center gap-2.5">
+                                <div id="customer-image">
+                                    <img src="../assets/images/customer-details/Ellipse 5 (1).png" alt="">
+                                </div>
+                                <h1 class="text-[#1D2129] font-medium text-lg
+">هاشم ناجي</h1>
+                                <span class="text-[#4E5969] text-sm">تم الإشتراك: <span>05/05/202</span>4</span>
+                            </div>
+                            <div class="flex flex-row justify-center items-center gap-5 mt-8">
+                                <a href="" class="group h-10 w-28 flex flex-row justify-center items-center gap-2.5
+                                    border border-[#81C6C3] rounded-full
+                                    transition-all duration-300
+                                     active:scale-95">
+                                    <svg class="transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
+                                            stroke="#075E66" stroke-width="1.5" stroke-miterlimit="10"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9"
+                                            stroke="#075E66" stroke-width="1.5" stroke-miterlimit="10"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                    <span class="font-medium text-lg text-[#4E5969]">
+                                        ايميل
+                                    </span>
+                                </a>
+                                <a href=""
+                                    class="group h-10 w-28 flex flex-row justify-center items-center border border-[#81C6C3] rounded-full gap-2.5 transition-all duration-300 active:scale-95">
+                                    <svg class="transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
+                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_14673)">
+                                            <path
+                                                d="M11.4282 0.213867C18.2774 -0.112062 23.9106 5.45205 23.6978 12.2773C23.4992 18.6439 18.1874 23.7018 11.8179 23.6045C10.0128 23.5769 8.30765 23.14 6.78955 22.3838L6.7251 22.3516L6.65479 22.3682L0.643066 23.793C0.455965 23.8369 0.286047 23.6717 0.324707 23.4834L1.58838 17.3486L1.60303 17.2803L1.5708 17.2178C0.761699 15.6333 0.303151 13.8399 0.297363 11.9395C0.278458 5.70053 5.19709 0.510558 11.4282 0.213867ZM12.0005 2.38281C9.48021 2.38281 7.05018 3.38879 5.26807 5.1709C3.47023 6.96879 2.47998 9.36077 2.47998 11.9033C2.48003 13.4255 2.82855 14.8799 3.51514 16.2246L3.89502 16.9697L3.13428 20.667L3.0708 20.9746L3.37549 20.9023L6.99072 20.0449L7.76318 20.4297C9.08593 21.0886 10.5121 21.4229 12.0005 21.4229C14.5429 21.4228 16.9342 20.4325 18.7319 18.6348C20.5139 16.8528 21.5198 14.4235 21.52 11.9033C21.52 9.36083 20.5298 6.96874 18.7319 5.1709C16.9341 3.37325 14.5429 2.3829 12.0005 2.38281Z"
+                                                fill="#075E66" stroke="white" stroke-width="0.4" />
+                                            <path
+                                                d="M7.6543 6.52295C7.99157 6.23771 8.50647 6.35554 8.68457 6.7583L9.65527 8.95166C9.75313 9.17295 9.7212 9.43015 9.57324 9.62158L9.08105 10.2583C8.82482 10.5899 8.78996 11.0459 9 11.4116C9.31044 11.9521 10.0521 12.735 10.8369 13.4292C11.6214 14.1231 12.4898 14.764 13.0693 14.9985C13.4603 15.1566 13.9067 15.0602 14.2002 14.7612L14.7637 14.186C14.933 14.0136 15.1836 13.9476 15.416 14.0142L17.7217 14.6763C18.145 14.7978 18.3323 15.2925 18.0957 15.6655C17.8752 16.0132 17.5933 16.394 17.2617 16.7124C16.9291 17.0318 16.5562 17.2784 16.1553 17.3755C14.6615 17.7372 12.3039 17.4017 9.31055 14.6079C6.71742 12.1876 6.06952 10.2082 6.22461 8.67725C6.26624 8.26701 6.45952 7.86458 6.73047 7.4917C7.00069 7.11984 7.33993 6.78886 7.6543 6.52295Z"
+                                                fill="#075E66" stroke="white" stroke-width="0.4" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_14673">
+                                                <rect width="24" height="24" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <span class="font-medium text-lg text-[#4E5969]">واتساب</span>
+                                </a>
+                                <a href=""
+                                    class="group h-10 w-28 flex flex-row justify-center items-center border border-[#81C6C3] rounded-full gap-2.5 transition-all duration-300 active:scale-95">
+                                    <svg class="transition-transform duration-300 group-hover:translate-x-1" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.0201 2.90991C8.71009 2.90991 6.02009 5.59991 6.02009 8.90991V11.7999C6.02009 12.4099 5.76009 13.3399 5.45009 13.8599L4.30009 15.7699C3.59009 16.9499 4.08009 18.2599 5.38009 18.6999C9.69009 20.1399 14.3401 20.1399 18.6501 18.6999C19.8601 18.2999 20.3901 16.8699 19.7301 15.7699L18.5801 13.8599C18.2801 13.3399 18.0201 12.4099 18.0201 11.7999V8.90991C18.0201 5.60991 15.3201 2.90991 12.0201 2.90991Z"
+                                            stroke="#075E66" stroke-width="1.5" stroke-miterlimit="10"
+                                            stroke-linecap="round" />
+                                        <path
+                                            d="M13.8699 3.19994C13.5599 3.10994 13.2399 3.03994 12.9099 2.99994C11.9499 2.87994 11.0299 2.94994 10.1699 3.19994C10.4599 2.45994 11.1799 1.93994 12.0199 1.93994C12.8599 1.93994 13.5799 2.45994 13.8699 3.19994Z"
+                                            stroke="#075E66" stroke-width="1.5" stroke-miterlimit="10"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M15.02 19.0601C15.02 20.7101 13.67 22.0601 12.02 22.0601C11.2 22.0601 10.44 21.7201 9.90002 21.1801C9.36002 20.6401 9.02002 19.8801 9.02002 19.0601"
+                                            stroke="#075E66" stroke-width="1.5" stroke-miterlimit="10" />
+                                    </svg>
+                                    <span class="font-medium text-lg text-[#4E5969]">إشعار</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="account-information w-full">
+                            <h2 class="font-medium text-xl text-[#4E5969]">معلومات الحساب</h2>
+                            <div class="mt-4 grid grid-flow-col grid-rows-2 gap-4">
+                                <div id="email"
+                                    class="h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.167 17.0834H5.83366C3.33366 17.0834 1.66699 15.8334 1.66699 12.9167V7.08341C1.66699 4.16675 3.33366 2.91675 5.83366 2.91675H14.167C16.667 2.91675 18.3337 4.16675 18.3337 7.08341V12.9167C18.3337 15.8334 16.667 17.0834 14.167 17.0834Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M14.1663 7.5L11.558 9.58333C10.6997 10.2667 9.29134 10.2667 8.433 9.58333L5.83301 7.5"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <h3 class="font-medium text-base text-[#4E5969]">البريد الإلكتروني</h3>
+                                    </div>
+                                    <div id="value">
+                                        user.user@gmail.com
+                                    </div>
+                                </div>
+                                <div id="marital-status"
+                                    class="h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.1604 6.03538L11.5458 4.42083L12.2238 3.39967H14.9766L15.6546 4.42083L14.0346 6.04078L14.8824 6.88975L17.1979 4.57503L15.6198 2.19971H11.5806L10.0025 4.57503L12.312 6.88375L13.1604 6.03538ZM7.0001 17.7992C7.66936 17.8023 8.33413 17.6899 8.96513 17.4668C10.2727 17.0168 11.3831 16.1262 12.1062 14.9475C12.5947 14.1584 12.8925 13.2662 12.9758 12.3418C13.0592 11.4175 12.9257 10.4864 12.5862 9.62266L11.4702 10.0642C11.7407 10.7545 11.8467 11.4984 11.7798 12.2367C11.7128 12.9751 11.4747 13.6878 11.0844 14.3181C10.5052 15.262 9.61547 15.9748 8.56792 16.334C8.06452 16.5122 7.53409 16.6019 7.0001 16.5992C4.35345 16.5992 2.20002 14.4459 2.20002 11.7994C2.20002 9.15288 4.35345 6.99955 7.0001 6.99955C7.83231 6.99955 8.64892 7.21494 9.35994 7.62233L9.95635 6.58076C9.05569 6.0676 8.0367 5.79834 7.0001 5.79959C3.69164 5.79959 1 8.4911 1 11.7994C1 15.1077 3.69164 17.7992 7.0001 17.7992Z"
+                                                fill="#86909C" />
+                                            <path
+                                                d="M13.5993 7.0005C12.7646 6.999 11.941 7.19163 11.1935 7.56316C10.446 7.93469 9.7952 8.47494 9.29244 9.14123C8.58584 10.0811 8.20233 11.2244 8.19922 12.4003C8.19922 13.2565 8.39482 14.0749 8.78063 14.8326L9.84985 14.2879C9.55167 13.7035 9.39719 13.0564 9.39924 12.4003C9.39924 11.4793 9.69324 10.6022 10.2495 9.8648C10.6407 9.34682 11.147 8.92685 11.7283 8.63801C12.3096 8.34918 12.9502 8.19938 13.5993 8.20046C15.9153 8.20046 17.7994 10.0844 17.7994 12.4003C17.7994 14.7162 15.9153 16.6002 13.5993 16.6002C13.1369 16.6027 12.6776 16.5253 12.2415 16.3716L11.8371 17.5008C12.4028 17.7014 12.999 17.8027 13.5993 17.8001C16.5766 17.8001 18.9994 15.3774 18.9994 12.4003C18.9994 9.42322 16.5766 7.0005 13.5993 7.0005Z"
+                                                fill="#86909C" />
+                                        </svg>
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">الحالة الإجتماعية</h3>
+                                    </div>
+                                    <div id="value">
+                                        user.user@gmail.com
+                                    </div>
+                                </div>
+                                <div id="phone-number"
+                                    class="h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M18.3087 15.2751C18.3087 15.5751 18.242 15.8834 18.1003 16.1834C17.9587 16.4834 17.7753 16.7667 17.5337 17.0334C17.1253 17.4834 16.6753 17.8084 16.167 18.0167C15.667 18.2251 15.1253 18.3334 14.542 18.3334C13.692 18.3334 12.7837 18.1334 11.8253 17.7251C10.867 17.3167 9.90866 16.7667 8.95866 16.0751C8.00033 15.3751 7.09199 14.6001 6.22533 13.7417C5.36699 12.8751 4.59199 11.9667 3.90033 11.0167C3.21699 10.0667 2.66699 9.11675 2.26699 8.17508C1.86699 7.22508 1.66699 6.31675 1.66699 5.45008C1.66699 4.88341 1.76699 4.34175 1.96699 3.84175C2.16699 3.33341 2.48366 2.86675 2.92533 2.45008C3.45866 1.92508 4.04199 1.66675 4.65866 1.66675C4.89199 1.66675 5.12533 1.71675 5.33366 1.81675C5.55033 1.91675 5.74199 2.06675 5.89199 2.28341L7.82533 5.00841C7.97533 5.21675 8.08366 5.40841 8.15866 5.59175C8.23366 5.76675 8.27533 5.94175 8.27533 6.10008C8.27533 6.30008 8.21699 6.50008 8.10033 6.69175C7.99199 6.88341 7.83366 7.08341 7.63366 7.28341L7.00033 7.94175C6.90866 8.03341 6.86699 8.14175 6.86699 8.27508C6.86699 8.34175 6.87533 8.40008 6.89199 8.46675C6.91699 8.53341 6.94199 8.58341 6.95866 8.63341C7.10866 8.90841 7.36699 9.26675 7.73366 9.70008C8.10866 10.1334 8.50866 10.5751 8.94199 11.0167C9.39199 11.4584 9.82533 11.8667 10.267 12.2417C10.7003 12.6084 11.0587 12.8584 11.342 13.0084C11.3837 13.0251 11.4337 13.0501 11.492 13.0751C11.5587 13.1001 11.6253 13.1084 11.7003 13.1084C11.842 13.1084 11.9503 13.0584 12.042 12.9667L12.6753 12.3417C12.8837 12.1334 13.0837 11.9751 13.2753 11.8751C13.467 11.7584 13.6587 11.7001 13.867 11.7001C14.0253 11.7001 14.192 11.7334 14.3753 11.8084C14.5587 11.8834 14.7503 11.9917 14.9587 12.1334L17.717 14.0917C17.9337 14.2417 18.0837 14.4167 18.1753 14.6251C18.2587 14.8334 18.3087 15.0417 18.3087 15.2751Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10" />
+                                        </svg>
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">رقم الهاتف</h3>
+                                    </div>
+                                    <div id="value">
+                                        user.user@gmail.com
+                                    </div>
+                                </div>
+                                <div id="date-of-birth"
+                                    class="h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.0003 18.3334C14.6027 18.3334 18.3337 14.6025 18.3337 10.0001C18.3337 5.39771 14.6027 1.66675 10.0003 1.66675C5.39795 1.66675 1.66699 5.39771 1.66699 10.0001C1.66699 14.6025 5.39795 18.3334 10.0003 18.3334Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M8.24219 4.8584V6.52507" stroke="#86909C" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M11.7588 4.8584V6.52507" stroke="#86909C" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M6.27539 8.4502H13.7254" stroke="#86909C" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M11.2503 14.725H8.75033C6.66699 14.725 5.41699 13.225 5.41699 11.3917V8.89168C5.41699 7.05835 6.66699 5.55835 8.75033 5.55835H11.2503C13.3337 5.55835 14.5837 7.05835 14.5837 8.89168V11.3917C14.5837 13.225 13.3337 14.725 11.2503 14.725Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">تاريخ الميلاد</h3>
+                                    </div>
+                                    <div id="value">
+                                        user.user@gmail.com
+                                    </div>
+                                </div>
+                                <div id="sex"
+                                    class="h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_1_15053)">
+                                                <path
+                                                    d="M3.81237 10.8206L6.13299 8.5C7.02071 9.16488 8.12734 9.46878 9.23012 9.35053C10.3329 9.23227 11.3499 8.70064 12.0765 7.86266C12.803 7.02468 13.1852 5.94257 13.146 4.83416C13.1067 3.72575 12.6491 2.67336 11.8651 1.88883C11.0811 1.1043 10.029 0.645892 8.92067 0.605885C7.81229 0.565877 6.72991 0.947242 5.89141 1.67321C5.05291 2.39917 4.52057 3.41583 4.40153 4.51852C4.2825 5.62122 4.58562 6.72807 5.24987 7.61625L2.92862 9.9375L2.04487 9.05312C1.92759 8.93593 1.76857 8.87013 1.60277 8.87019C1.43698 8.87024 1.278 8.93616 1.16081 9.05344C1.04361 9.17071 0.977807 9.32974 0.977866 9.49553C0.977925 9.66133 1.04384 9.82031 1.16112 9.9375L2.04487 10.8219L0.807993 12.0581C0.748299 12.1158 0.700685 12.1847 0.667929 12.261C0.635174 12.3372 0.617932 12.4193 0.617211 12.5022C0.61649 12.5852 0.632304 12.6675 0.663729 12.7443C0.695155 12.8212 0.741563 12.8909 0.800246 12.9496C0.858929 13.0083 0.928711 13.0547 1.00552 13.0861C1.08233 13.1176 1.16463 13.1334 1.24762 13.1327C1.33061 13.1319 1.41262 13.1147 1.48887 13.0819C1.56512 13.0492 1.63409 13.0016 1.69174 12.9419L2.92862 11.705L3.81237 12.5887C3.87002 12.6484 3.93899 12.6961 4.01524 12.7288C4.09149 12.7616 4.1735 12.7788 4.25649 12.7795C4.33948 12.7803 4.42178 12.7644 4.49859 12.733C4.5754 12.7016 4.64518 12.6552 4.70386 12.5965C4.76255 12.5378 4.80896 12.468 4.84038 12.3912C4.87181 12.3144 4.88762 12.2321 4.8869 12.1491C4.88618 12.0661 4.86894 11.9841 4.83618 11.9079C4.80343 11.8316 4.75581 11.7627 4.69612 11.705L3.81237 10.8206ZM8.74987 1.875C9.36793 1.875 9.97212 2.05828 10.486 2.40166C10.9999 2.74504 11.4005 3.2331 11.637 3.80411C11.8735 4.37513 11.9354 5.00347 11.8148 5.60966C11.6942 6.21585 11.3966 6.77267 10.9596 7.20971C10.5225 7.64675 9.96572 7.94438 9.35952 8.06495C8.75333 8.18553 8.125 8.12365 7.55398 7.88712C6.98296 7.6506 6.4949 7.25006 6.15153 6.73616C5.80815 6.22225 5.62487 5.61807 5.62487 5C5.62487 4.1712 5.95411 3.37634 6.54016 2.79029C7.12621 2.20424 7.92107 1.875 8.74987 1.875Z"
+                                                    fill="#86909C" />
+                                                <path
+                                                    d="M18.7496 6.875H15.6246C15.4588 6.875 15.2999 6.94085 15.1827 7.05806C15.0654 7.17527 14.9996 7.33424 14.9996 7.5C14.9996 7.66576 15.0654 7.82473 15.1827 7.94194C15.2999 8.05915 15.4588 8.125 15.6246 8.125H17.2408L13.8658 11.5C12.9779 10.8355 11.8711 10.532 10.7684 10.6507C9.66572 10.7694 8.64891 11.3014 7.92268 12.1397C7.19646 12.9779 6.81474 14.0601 6.85437 15.1685C6.89399 16.2769 7.35203 17.3291 8.13627 18.1133C8.92051 18.8976 9.97272 19.3556 11.0811 19.3952C12.1895 19.4349 13.2717 19.0531 14.1099 18.3269C14.9482 17.6007 15.4802 16.5839 15.5989 15.4812C15.7176 14.3785 15.4141 13.2717 14.7496 12.3837L18.1246 9.00875V10.625C18.1246 10.7908 18.1904 10.9497 18.3077 11.0669C18.4249 11.1842 18.5838 11.25 18.7496 11.25C18.9154 11.25 19.0743 11.1842 19.1915 11.0669C19.3088 10.9497 19.3746 10.7908 19.3746 10.625V7.5C19.3746 7.33424 19.3088 7.17527 19.1915 7.05806C19.0743 6.94085 18.9154 6.875 18.7496 6.875ZM11.2496 18.125C10.6315 18.125 10.0273 17.9417 9.51344 17.5983C8.99954 17.255 8.599 16.7669 8.36247 16.1959C8.12595 15.6249 8.06407 14.9965 8.18464 14.3903C8.30522 13.7842 8.60285 13.2273 9.03989 12.7903C9.47693 12.3533 10.0338 12.0556 10.6399 11.935C11.2461 11.8145 11.8745 11.8764 12.4455 12.1129C13.0165 12.3494 13.5046 12.7499 13.8479 13.2638C14.1913 13.7777 14.3746 14.3819 14.3746 15C14.3746 15.4104 14.2938 15.8167 14.1367 16.1959C13.9797 16.575 13.7495 16.9195 13.4593 17.2097C13.1691 17.4999 12.8246 17.7301 12.4455 17.8871C12.0663 18.0442 11.66 18.125 11.2496 18.125Z"
+                                                    fill="#86909C" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_1_15053">
+                                                    <rect width="20" height="20" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">الجنس</h3>
+                                    </div>
+                                    <div id="value">
+                                        user.user@gmail.com
+                                    </div>
+                                </div>
+                                <div id="job"
+                                    class="h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.66636 18.3333H13.333C16.683 18.3333 17.283 16.9917 17.458 15.3583L18.083 8.69167C18.308 6.65833 17.7247 5 14.1664 5H5.83303C2.27469 5 1.69136 6.65833 1.91636 8.69167L2.54136 15.3583C2.71636 16.9917 3.31636 18.3333 6.66636 18.3333Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M6.66699 5.00008V4.33341C6.66699 2.85841 6.66699 1.66675 9.33366 1.66675H10.667C13.3337 1.66675 13.3337 2.85841 13.3337 4.33341V5.00008"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M11.6663 10.8333V11.6667C11.6663 11.675 11.6663 11.675 11.6663 11.6833C11.6663 12.5917 11.658 13.3333 9.99967 13.3333C8.34967 13.3333 8.33301 12.6 8.33301 11.6917V10.8333C8.33301 10 8.33301 10 9.16634 10H10.833C11.6663 10 11.6663 10 11.6663 10.8333Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M18.042 9.16675C16.117 10.5667 13.917 11.4001 11.667 11.6834"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M2.18359 9.3916C4.05859 10.6749 6.17526 11.4499 8.33359 11.6916"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">العمل</h3>
+                                    </div>
+                                    <div id="value">
+                                        user.user@gmail.com
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="psychological-information w-full">
+                            <h2 class="font-medium text-xl text-[#4E5969]">المعلومات النفسية</h2>
+                            <div class="mt-4 w-full flex flex-row justify-between gap-4">
+                                <div
+                                    class="level-knowledge-psychotherapy w-full h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.99984 18.3334C14.5832 18.3334 18.3332 14.5834 18.3332 10.0001C18.3332 5.41675 14.5832 1.66675 9.99984 1.66675C5.4165 1.66675 1.6665 5.41675 1.6665 10.0001C1.6665 14.5834 5.4165 18.3334 9.99984 18.3334Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 6.66675V10.8334" stroke="#86909C" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9.99561 13.3333H10.0031" stroke="#86909C" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">مستوى المعرفة في العلاج النفسي
+                                        </h3>
+                                    </div>
+                                    <div id="value">
+                                        أعزب
+                                    </div>
+                                </div>
+                                <div
+                                    class="How-can-we-help h-20 w-full border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.99984 18.3334C14.5832 18.3334 18.3332 14.5834 18.3332 10.0001C18.3332 5.41675 14.5832 1.66675 9.99984 1.66675C5.4165 1.66675 1.6665 5.41675 1.6665 10.0001C1.6665 14.5834 5.4165 18.3334 9.99984 18.3334Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 6.66675V10.8334" stroke="#86909C" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9.99561 13.3333H10.0031" stroke="#86909C" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">كيف نستطيع المساعدة</h3>
+                                    </div>
+                                    <div id="value">
+                                        لا يوجد
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity w-full">
+                            <h2 class="font-medium text-xl text-[#4E5969]">النشاط</h2>
+                            <div class="mt-4 w-full flex flex-row justify-between gap-4">
+                                <div
+                                    class="sessions w-full h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M18.3332 6.66675V10.8334C18.3332 14.1667 16.6665 15.8334 13.3332 15.8334H12.9165C12.6582 15.8334 12.4082 15.9584 12.2498 16.1667L10.9998 17.8334C10.4498 18.5667 9.54984 18.5667 8.99984 17.8334L7.74984 16.1667C7.6165 15.9834 7.30817 15.8334 7.08317 15.8334H6.6665C3.33317 15.8334 1.6665 15.0001 1.6665 10.8334V6.66675C1.6665 3.33341 3.33317 1.66675 6.6665 1.66675H9.99984"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M12.6666 3.8499C12.3916 3.0249 12.7166 2.00824 13.6166 1.7249C14.0833 1.58324 14.6666 1.6999 14.9999 2.14157C15.3166 1.68324 15.9166 1.58324 16.3833 1.7249C17.2833 1.9999 17.6083 3.0249 17.3333 3.8499C16.9083 5.15824 15.4166 5.83324 14.9999 5.83324C14.5833 5.83324 13.1083 5.16657 12.6666 3.8499Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M13.3305 9.16667H13.338" stroke="#86909C" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9.99607 9.16667H10.0036" stroke="#86909C" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M6.66209 9.16667H6.66957" stroke="#86909C" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">الجلسات</h3>
+                                        </h3>
+                                    </div>
+                                    <div id="value">
+                                        لا يوجد
+                                    </div>
+                                </div>
+                                <div
+                                    class="courses h-20 w-full border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.49984 18.3334H12.4998C16.6665 18.3334 18.3332 16.6667 18.3332 12.5001V7.50008C18.3332 3.33341 16.6665 1.66675 12.4998 1.66675H7.49984C3.33317 1.66675 1.6665 3.33341 1.6665 7.50008V12.5001C1.6665 16.6667 3.33317 18.3334 7.49984 18.3334Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M7.58398 9.99999V8.76666C7.58398 7.17499 8.70898 6.53333 10.084 7.32499L11.1507 7.94166L12.2173 8.55833C13.5923 9.34999 13.5923 10.65 12.2173 11.4417L11.1507 12.0583L10.084 12.675C8.70898 13.4667 7.58398 12.8167 7.58398 11.2333V9.99999Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">الدورات</h3>
+                                    </div>
+                                    <div id="value">
+                                        لا يوجد
+                                    </div>
+                                </div>
+                                <div
+                                    class="meetings h-20 w-full border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M2.8002 9.60307C2.8002 7.69358 3.55876 5.86232 4.90903 4.51212C6.25929 3.16192 8.09064 2.40339 10.0002 2.40339C11.9097 2.40339 13.7411 3.16192 15.0914 4.51212C16.4416 5.86232 17.2002 7.69358 17.2002 9.60307C17.2015 10.5487 17.0159 11.4853 16.654 12.359C16.2921 13.2327 15.7611 14.0262 15.0914 14.694C15.015 14.7678 14.954 14.856 14.9121 14.9536C14.8702 15.0512 14.8481 15.1562 14.8472 15.2624C14.8463 15.3687 14.8665 15.474 14.9068 15.5724C14.947 15.6706 15.0064 15.76 15.0815 15.8351C15.1566 15.9102 15.2459 15.9696 15.3442 16.0098C15.4425 16.05 15.5479 16.0703 15.6541 16.0693C15.7604 16.0684 15.8653 16.0464 15.9629 16.0044C16.0605 15.9625 16.1488 15.9016 16.2226 15.8252C17.0408 15.0088 17.6898 14.039 18.1321 12.9712C18.5745 11.9035 18.8015 10.7588 18.8002 9.60307C18.8002 4.74328 14.8602 0.803467 10.0002 0.803467C5.1402 0.803467 1.2002 4.74328 1.2002 9.60307C1.2002 12.0325 2.1858 14.234 3.7778 15.8252C3.92868 15.9708 4.13076 16.0515 4.34052 16.0496C4.55028 16.0479 4.75092 15.9637 4.89925 15.8154C5.04758 15.6671 5.13172 15.4664 5.13353 15.2567C5.13536 15.0469 5.05472 14.8448 4.909 14.694C4.23932 14.0263 3.70825 13.2328 3.34635 12.359C2.98444 11.4853 2.79884 10.5488 2.8002 9.60307ZM6.0002 9.60307C6.00032 8.94531 6.16264 8.29779 6.47279 7.71778C6.78293 7.13777 7.23133 6.64319 7.77827 6.27783C8.32521 5.91248 8.95379 5.68764 9.60836 5.62322C10.263 5.55879 10.9233 5.65678 11.531 5.90849C12.1387 6.16021 12.6749 6.55788 13.0922 7.0663C13.5095 7.57472 13.7949 8.17819 13.9233 8.82323C14.0516 9.46836 14.0189 10.1351 13.828 10.7645C13.6372 11.394 13.294 11.9666 12.829 12.4317C12.6832 12.5826 12.6026 12.7847 12.6044 12.9944C12.6063 13.2041 12.6904 13.4048 12.8388 13.5531C12.9871 13.7014 13.1877 13.7856 13.3975 13.7874C13.6072 13.7892 13.8093 13.7086 13.9602 13.5628C14.7433 12.7797 15.2766 11.782 15.4926 10.6957C15.7087 9.60948 15.5977 8.48355 15.1739 7.46039C14.75 6.43721 14.0322 5.56268 13.1113 4.9474C12.1904 4.33212 11.1077 4.00372 10.0002 4.00372C8.89268 4.00372 7.80996 4.33212 6.88906 4.9474C5.96816 5.56268 5.2504 6.43721 4.82652 7.46039C4.40266 8.48355 4.29172 9.60948 4.50776 10.6957C4.72379 11.782 5.25708 12.7797 6.0402 13.5628C6.114 13.6392 6.20227 13.7002 6.29988 13.7421C6.39748 13.784 6.50245 13.8061 6.60868 13.8071C6.7149 13.808 6.82024 13.7877 6.91856 13.7475C7.01688 13.7073 7.1062 13.6479 7.18131 13.5728C7.25643 13.4976 7.31583 13.4084 7.35605 13.31C7.39628 13.2117 7.41652 13.1064 7.4156 13.0002C7.41468 12.894 7.3926 12.789 7.35068 12.6914C7.30875 12.5938 7.2478 12.5055 7.1714 12.4317C6.79931 12.0608 6.50428 11.6198 6.30328 11.1344C6.10227 10.6489 5.99927 10.1284 6.0002 9.60307ZM12.0002 9.60307C12.0002 10.1335 11.7895 10.6421 11.4144 11.0172C11.0393 11.3923 10.5306 11.6029 10.0002 11.6029C9.4698 11.6029 8.96108 11.3923 8.58596 11.0172C8.21091 10.6421 8.0002 10.1335 8.0002 9.60307C8.0002 9.07267 8.21091 8.56395 8.58596 8.18891C8.96108 7.81384 9.4698 7.60314 10.0002 7.60314C10.5306 7.60314 11.0393 7.81384 11.4144 8.18891C11.7895 8.56395 12.0002 9.07267 12.0002 9.60307ZM8.1386 13.998C8.12189 13.7433 8.15764 13.4879 8.24363 13.2476C8.32962 13.0072 8.46404 12.787 8.63852 12.6008C8.813 12.4144 9.02396 12.2659 9.25812 12.1644C9.49236 12.0628 9.74492 12.0104 10.0002 12.0104C10.2555 12.0104 10.508 12.0628 10.7423 12.1644C10.9764 12.2659 11.1874 12.4144 11.3619 12.6008C11.5364 12.787 11.6708 13.0072 11.7568 13.2476C11.8428 13.4879 11.8785 13.7433 11.8618 13.998L11.6042 17.7067C11.5756 18.1124 11.394 18.4924 11.0964 18.7696C10.7988 19.047 10.4071 19.2012 10.0002 19.2012C9.59332 19.2012 9.20164 19.047 8.90395 18.7696C8.60636 18.4924 8.42484 18.1124 8.3962 17.7067L8.1386 13.998Z"
+                                                fill="#86909C" />
+                                        </svg>
+                                        <h3 class="font-medium text-base text-[#4E5969]">اللقاءات</h3>
+                                    </div>
+                                    <div id="value">
+                                        لا يوجد
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="balancebalance w-full">
+                            <h2 class="font-medium text-xl text-[#4E5969]">الرصيد</h2>
+                            <div class="mt-4 w-full flex flex-row justify-between gap-4">
+                                <div
+                                    class="sessions w-full h-20 border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.99984 18.3334C14.5832 18.3334 18.3332 14.5834 18.3332 10.0001C18.3332 5.41675 14.5832 1.66675 9.99984 1.66675C5.4165 1.66675 1.6665 5.41675 1.6665 10.0001C1.6665 14.5834 5.4165 18.3334 9.99984 18.3334Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 6.66675V10.8334" stroke="#86909C" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9.99561 13.3333H10.0031" stroke="#86909C" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <h3 class="font-medium text-base text-[#4E5969]">الرصيد المدفوع</h3>
+                                        </h3>
+                                    </div>
+                                    <div id="value">
+                                        لا يوجد
+                                    </div>
+                                </div>
+                                <div
+                                    class="refund h-20 w-full border border-[#C9CDD4] flex flex-col justify-start gap-3 pt-2.5 pr-2.5 rounded-xl">
+                                    <div class=" flex flex-row gap-2.5">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.99984 18.3334C14.5832 18.3334 18.3332 14.5834 18.3332 10.0001C18.3332 5.41675 14.5832 1.66675 9.99984 1.66675C5.4165 1.66675 1.6665 5.41675 1.6665 10.0001C1.6665 14.5834 5.4165 18.3334 9.99984 18.3334Z"
+                                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 6.66675V10.8334" stroke="#86909C" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M9.99561 13.3333H10.0031" stroke="#86909C" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                        <h3 class="font-medium text-base text-[#4E5969]">الرصيد المسترد</h3>
+                                    </div>
+                                    <div id="value">
+                                        لا يوجد
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="customer-options-btn"
+                            class="bg-[#81C6C3] w-36 flex flex-row justify-center items-center gap-2 h-10 border border-[#81C6C3] rounded-lg text-white font-medium text-sm cursor-pointer  transition-all duration-300 active:scale-95">
+                            حفظ
+                        </button>
+                    </div>
+
+                    <div id="sessions-wrapper" class=" pt-5 flex flex-col gap-6">
+                        <h1 class="font-bold text-xl text-[#86909C] pr-6">الجلسات</h1>
+                        <div
+                            class="table-container bg-white w-full p-6 border border-[#E5E6EB] rounded-b-xl overflow-x-auto">
+                            <table class="w-full text-right border-collapse">
+                                <thead>
+                                    <tr class="border-b border-[#E5E6EB] text-[#1D2129] font-medium text-sm">
+                                        <th class="pb-4 pt-2 font-bold">رقم الجلسة</th>
+                                        <th class="pb-4 pt-2 font-bold">نوع الجلسة</th>
+                                        <th class="pb-4 pt-2 font-bold">مدة الجلسة</th>
+                                        <th class="pb-4 pt-2 font-bold">حالة الجلسة</th>
+                                        <th class="pb-4 pt-2 font-bold">تاريخ الجلسة</th>
+                                        <th class="pb-4 pt-2 font-bold">الأخصائي</th>
+                                        <th class="pb-4 pt-2 font-bold">عدد الجلسات</th>
+                                        <th class="pb-4 pt-2 font-bold">السعر</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody class="divide-y divide-[#E5E6EB]">
+                                    <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <span class="text-base text-[#075E66]">جلسة #26565</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">استشارة قانونية</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">45 دقيقة</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="w-15 h-8 bg-[#E8FFFB] rounded-full flex justify-center items-center font-medium text-[#0AA5A8] text-sm">جديدة</span>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">23/8/2024 ، 10:15ص</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">أحمد محمد</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">2</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">200 ر.س</td>
+                                    </tr>
+
+                                    <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <span class="text-base text-[#075E66]">جلسة #26566</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">استشارة أسرية</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">60 دقيقة</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="w-15 h-8 bg-[#FFECE8] rounded-full flex justify-center items-center font-medium text-[#F53F3F] text-sm">ملغية</span>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">23/8/2024 ، 01:30م</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">سارة خالد</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">1</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">180 ر.س</td>
+                                    </tr>
+
+                                    <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <span class="text-base text-[#075E66]">جلسة #26567</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">استشارة نفسية</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">30 دقيقة</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="w-20 h-8 bg-[#FFFCE8] rounded-full flex justify-center items-center font-medium text-[#F7BA1E] text-sm">قيد
+                                                التنفيذ</span>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">24/8/2024 ، 09:00ص</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">محمد سمير</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">3</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">150 ر.س</td>
+                                    </tr>
+
+                                    <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <span class="text-base text-[#075E66]">جلسة #26568</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">استشارة مهنية</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">50 دقيقة</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="w-15 h-8 bg-[#E8FFEA] rounded-full flex justify-center items-center font-medium text-[#00B42A] text-sm">مكتملة</span>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">24/8/2024 ، 03:20م</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">ليلى محمود</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">1</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">220 ر.س</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="support-programs-wrapper" class=" pt-5 flex flex-col gap-6">
+                        <h1 class="font-bold text-xl text-[#86909C] pr-6">برامج الدعم</h1>
+                        <div
+                            class="table-container bg-white w-full p-6 border border-[#E5E6EB] rounded-b-xl overflow-x-auto">
+                            <table class="w-full text-right border-collapse">
+                                <thead>
+                                    <tr class="border-b border-[#E5E6EB] text-[#1D2129] font-medium text-sm">
+                                        <th class="pb-4 pt-2 font-bold">اسم البرنامج</th>
+                                        <th class="pb-4 pt-2 font-bold">نوع البرنامج</th>
+                                        <th class="pb-4 pt-2 font-bold">مدة البرنامج</th>
+                                        <th class="pb-4 pt-2 font-bold">حالة البرنامج</th>
+                                        <th class="pb-4 pt-2 font-bold">تاريخ البرنامج</th>
+                                        <th class="pb-4 pt-2 font-bold">الأخصائي</th>
+                                        <th class="pb-4 pt-2 font-bold">عدد الحلقات</th>
+                                        <th class="pb-4 pt-2 font-bold">السعر</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody class="divide-y divide-[#E5E6EB]">
+                                    <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <span class="text-base text-[#075E66]">دورة فنية الظل</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">دورة</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">30 دقيقة</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="w-15 h-8 bg-[#E8FFFB] rounded-full flex justify-center items-center font-medium text-[#0AA5A8] text-sm">جديدة</span>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">22/8/2024 ، 04:20م</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">هاشم ناجي</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">1</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">135 ر.س</td>
+                                    </tr>
+
+                                    <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <span class="text-base text-[#075E66]">بودكاست التعلق العاطفي</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">لقاء</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">45 دقيقة</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="w-20 h-8 bg-[#FFFCE8] rounded-full flex justify-center items-center font-medium text-[#F7BA1E] text-sm">قيد
+                                                التنفيذ</span>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">23/8/2024 - 02:15م</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">ليلى العوضي</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">2</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">250 ر.س</td>
+                                    </tr>
+                                    <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-3">
+                                                <span class="text-base text-[#075E66]">بودكاست التعلق العاطفي</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">لقاء</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">45 دقيقة</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="w-15 h-8 bg-[#E8FFEA] rounded-full flex justify-center items-center font-medium text-[#00B42A] text-sm">مكتملة</span>
+                                        </td>
+                                        <td class="py-4 text-sm text-[#4E5969]">23/8/2024 - 02:15م</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">ليلى العوضي</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">2</td>
+                                        <td class="py-4 text-sm text-[#4E5969]">250 ر.س</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

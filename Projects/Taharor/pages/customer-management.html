@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang='ar' dir='rtl'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    
+    <style>
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: 'Tajawal', sans-serif !important;
+        }
+    </style>
+    <title>إدارة العملاء</title>
+</head>
+
+<body id="customer-management-page">
+    <div class="container-page min-h-screen flex flex-row relative">
+        <aside id="sidebar" class="fixed lg:static top-0 right-0  bg-[#075E66]
+                 w-56 min-h-screen transform translate-x-full
+                 lg:translate-x-0 transition-transform duration-300">
+            <img src="../assets/images/logoo_dashbord.png" alt="Logoo Dashbord" class="w-24 h-12 m-auto mb-6">
+
+            <div class="menu-items flex flex-col justify-start gap-0.5">
+                <a href="index.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a] ">
+                    <img src="../assets/images/category.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">الرئيسية</span>
+                </a>
+                <a href="customer-management.html" id="customer-management"
+                    class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/people.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة العملاء</span>
+                </a>
+                <a href="specialist-management.html"
+                    class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/doctor 1.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة الأخصائيين</span>
+                </a>
+                <a href="sessions.html" class="flex flex-row items-center gap-2.5 h-13  p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/message-favorite.png" alt="" class="max-w-4 max-h-4 ">
+                    <span class="text-white font-normal text-base">الجلسات</span>
+                </a>
+                <div id="support-programs" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer ">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/like.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">برامج الدعم</span>
+                                <i id="support-programs-arrow" class="fa-solid fa-angle-down fa-sm pr-20"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-support-programs" class=" hidden flex flex-col items-start gap-2.5 pb-1.5">
+                        <a href="treatment-programs.html" class="pr-4">
+                            <span class=" font-normal text-base text-[#075E66]">البرامج العلاجية</span>
+                        </a>
+                        <a href="courses.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">الدورات</span>
+                        </a>
+                        <a href="meetings.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">اللقاءات</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="reports-statistics.html"
+                    class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/chart.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">التقارير والإحصائيات</span>
+                </a>
+                <a href="conversation-management.html"
+                    class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/messages.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">إدارة المحادثات</span>
+                </a>
+                <div id="notifications" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/like.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">الإشعارات</span>
+                                <i id="notifications-arrow" class="fa-solid fa-angle-down fa-sm pr-[87px]"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-notifications" class="hidden flex flex-col items-start gap-2.5 pb-1.5 bg-[#81C6C3]">
+                        <a href="system-notifications.html" class="pr-4 hover:bg-[#81C6C3]">
+                            <span class=" font-normal text-base text-[#075E66]">إشعارات النظام</span>
+                        </a>
+                        <a href="send-notifications.html" class="pr-4 hover:bg-[#81C6C3]">
+                            <span class="text-[#075E66] font-normal text-base">إرسال إشعارات</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="pages-link" class="hover:bg-[#05444a]">
+                    <button class="flex flex-row items-center gap-2.5 h-13 p-4 cursor-pointer">
+                        <div class="flex flex-row justify-between items-center gap-2.5">
+                            <img src="../assets/images/message-edit.png" alt="" class="max-w-4 max-h-4">
+                            <div class="flex flex-row justify-between items-center">
+                                <span class="text-white font-normal text-base">الصفحات</span>
+                                <i id="pages-arrow" class="fa-solid fa-angle-down fa-sm pr-[87px]"
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div id="list-pages" class="hidden flex flex-col items-start gap-2.5 pb-1.5 bg-[#81C6C3]">
+                        <a href="frequently-asked-questions.html" class="pr-4">
+                            <span class=" font-normal text-base text-[#075E66]">الأسئلة الأكثر تداولاً</span>
+                        </a>
+                        <a href="terms-conditions.html" class="pr-4">
+                            <span class="text-[#075E66] font-normal text-base">الشروط و الأحكام</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="settings.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/setting-2.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">الإعدادات</span>
+                </a>
+                <a href="log-out.html" class="flex flex-row items-center gap-2.5 h-13 p-4 hover:bg-[#05444a]">
+                    <img src="../assets/images/logout.png" alt="" class="max-w-4 max-h-4">
+                    <span class="text-white font-normal text-base">تسجيل الخروج</span>
+                </a>
+            </div>
+        </aside>
+        <div class="wrapper-page bg-[#FAFAFA] flex-1">
+            <header
+                class="w-full h-20 border-b-2 border-b-[#E5E6EB] flex flex-row justify-between items-center pr-6 pl-6">
+                <button id="menu-btn" class="lg:hidden z-50">
+                    <i class="fa-solid fa-bars fa-xl" style="color: rgb(134, 144, 156);"></i>
+                </button>
+                <div class="relative">
+                    <input type="text" name="search" id="search" placeholder="إبحث عن أي شيء داخل المنصة"
+                        class="bg-white border border-2 border-[#E5E6EB] w-96 h-10 rounded-xl pr-8 focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out">
+                    <i class="fa-solid fa-magnifying-glass fa-lg absolute right-1.5 top-5.5"
+                        style="color: rgb(134, 144, 156);"></i>
+                </div>
+                <div class="flex flex-row justify-between items-center gap-4 relative">
+                    <div
+                        class="bg-white border border-2 border-[#CCCCCC] rounded-lg w-10 h-12 pt-2.5 pr-1 relative cursor-pointer">
+                        <i class="fa-regular fa-bell fa-xl" style="color: rgb(142, 142, 142);"></i>
+                        <img src="../assets/images/header/Rectangle 73.png" alt="" class="absolute top-1">
+                        <span class="absolute -top-0.5 left-5 text-white">0</span>
+                    </div>
+                    <img src="../assets/images/header/Ellipse 5.png" alt="">
+                    <p class="flex flex-col font-medium text-base">
+                        <span class="text-sm">مرحباَ</span>
+                        <span>محمد</span>
+                    </p>
+                    <button id="profile-menu-logout-btn" class="cursor-pointer">
+                        <i class="fa-solid fa-angle-down fa-xl" style="color: rgb(142, 142, 142);"></i>
+                    </button>
+                    <div id="profile-menu-logout"
+                        class="hidden bg-white w-full pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl absolute top-15 z-50">
+                        <a href="" class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                            <p class="font-medium text-base text-[#4E5969]">الحساب الشخصي</p>
+                            <i class="fa-regular fa-circle-user fa-xl" style="color: rgb(78, 89, 105);"></i>
+                        </a>
+                        <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                        <a href="login.html"
+                            class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                            <p class="font-medium text-base text-[#075E66]">تسجيل الخروج</p>
+                            <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 fa-xl"
+                                style="color: rgb(7, 94, 102);"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="main-wrraper flex flex-col gap-4 p-6">
+                    <div class="info">
+                        <div class="main-wrraper flex flex-col gap-4">
+                            <div class="flex flex-row items-center gap-2">
+                                <img src="../assets/images/customer-management/people.png" alt="">
+                                <p class="text-[#075E66] font-bold text-xl">
+                                    إدارة العملاء <span class="text-[#86909C] font-normal text-sm">(245 عميل)</span>
+                                </p>
+                            </div>
+                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+                            <p class="text-[#86909C] font-medium text-sm">إستعراض كافة العملاء</p>
+                        </div>
+                    </div>
+                    <div class="tools flex flex-row justify-between items-center">
+                        <div class="flex flex-row items-center gap-4">
+                            <button id="filtering-btn"
+                                class="relative w-32 h-12 bg-white border border-2 border-[#E5E6EB]  rounded-xl p-4 flex flex-row gap-3 items-center cursor-pointer active:scale-95 transition-all duration-300">
+                                <i class="fa-solid fa-filter fa-md" style="color: rgb(134, 144, 156);"></i>
+                                <span class="text-[#86909C] font-medium text-md">تصفية</span>
+                            </button>
+                            <div class="relative">
+                                <input type="text" name="search" id="search" placeholder="البحث عن عميل..."
+                                    class="bg-white border border-2 border-[#E5E6EB] w-96 h-12 rounded-xl pr-8 focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out">
+                                <i class="fa-solid fa-magnifying-glass fa-lg absolute right-1.5 top-5.5"
+                                    style="color: rgb(134, 144, 156);"></i>
+                            </div>
+                        </div>
+                        <button id="add-client-btn"
+                            class="bg-[#075E66] h-14 w-44 rounded-xl flex flex-row  items-center gap-4 pr-4 cursor-pointer active:scale-95 transition-all duration-300">
+                            <i class="fa-solid fa-plus" style="color: rgb(255, 255, 255);"></i>
+                            <span class="text-white">إضافة عميل</span>
+                        </button>
+                    </div>
+                    <div class="table-container bg-white w-full p-6 border border-[#E5E6EB] rounded-xl overflow-x-auto">
+                        <table class="w-full text-right border-collapse">
+                            <thead>
+                                <tr class="border-b border-[#E5E6EB] text-[#1D2129] font-medium text-sm">
+                                    <th class="pb-4 pt-2 font-bold">الاسم</th>
+                                    <th class="pb-4 pt-2 font-bold">البريد الإلكتروني</th>
+                                    <th class="pb-4 pt-2 font-bold">رقم الجوال</th>
+                                    <th class="pb-4 pt-2 font-bold">الجنس</th>
+                                    <th class="pb-4 pt-2 font-bold">الحالة الإجتماعية</th>
+                                    <th class="pb-4 pt-2 font-bold">تاريخ الميلاد</th>
+                                    <th class="pb-4 pt-2"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y divide-[#E5E6EB]">
+                                <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                    <td class="py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="../assets/images/customer-management/Frame 1300193088 (1).png"
+                                                alt="محمد ابو حليمة" class="w-9 h-9 rounded-full object-cover">
+                                            <span class="font-medium text-base">الختيار بهاء</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 text-sm text-[#4E5969]">mohammed@example.com</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">0599999999</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">ذكر</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">اعزب</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">2002-05-15</td>
+                                    <td class="py-4 text-left relative">
+                                        <button
+                                            class="table-action-btn text-[#075E66] hover:underline text-sm cursor-pointer">
+                                            <i class="fa-solid fa-ellipsis-vertical"
+                                                style="color: rgb(124, 124, 124);"></i>
+                                        </button>
+                                        <div
+                                            class="table-action-menu hidden absolute left-1.5 bg-white pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl w-48 z-50">
+                                            <a href="customer-details.html"
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">مشاهدة التفاصيل</p>
+                                                <img src="../assets/images/customer-management/eye.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                                <img src="../assets/images/customer-management/edit-2.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <button
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                                <img src="../assets/images/customer-management/trash.png" alt=""
+                                                    class="w-5 h-5">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                    <td class="py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="../assets/images/customer-management/Frame 1300193088 (1).png"
+                                                alt="محمد ابو حليمة" class="w-9 h-9 rounded-full object-cover">
+                                            <span class="font-medium text-base">الختيار بهاء</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 text-sm text-[#4E5969]">mohammed@example.com</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">0599999999</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">ذكر</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">اعزب</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">2002-05-15</td>
+                                    <td class="py-4 text-left relative">
+                                        <button
+                                            class="table-action-btn text-[#075E66] hover:underline text-sm cursor-pointer">
+                                            <i class="fa-solid fa-ellipsis-vertical"
+                                                style="color: rgb(124, 124, 124);"></i>
+                                        </button>
+                                        <div
+                                            class="table-action-menu hidden absolute left-1.5 bg-white pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl w-48 z-50">
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">مشاهدة التفاصيل</p>
+                                                <img src="../assets/images/customer-management/eye.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                                <img src="../assets/images/customer-management/edit-2.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <button
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                                <img src="../assets/images/customer-management/trash.png" alt=""
+                                                    class="w-5 h-5">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                    <td class="py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="../assets/images/customer-management/Frame 1300193088 (1).png"
+                                                alt="محمد ابو حليمة" class="w-9 h-9 rounded-full object-cover">
+                                            <span class="font-medium text-base">الختيار بهاء</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 text-sm text-[#4E5969]">mohammed@example.com</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">0599999999</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">ذكر</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">اعزب</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">2002-05-15</td>
+                                    <td class="py-4 text-left relative">
+                                        <button
+                                            class="table-action-btn text-[#075E66] hover:underline text-sm cursor-pointer">
+                                            <i class="fa-solid fa-ellipsis-vertical"
+                                                style="color: rgb(124, 124, 124);"></i>
+                                        </button>
+                                        <div
+                                            class="table-action-menu hidden absolute left-1.5 bg-white pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl w-48 z-50">
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">مشاهدة التفاصيل</p>
+                                                <img src="../assets/images/customer-management/eye.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                                <img src="../assets/images/customer-management/edit-2.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <button
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                                <img src="../assets/images/customer-management/trash.png" alt=""
+                                                    class="w-5 h-5">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                    <td class="py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="../assets/images/customer-management/Frame 1300193088 (1).png"
+                                                alt="محمد ابو حليمة" class="w-9 h-9 rounded-full object-cover">
+                                            <span class="font-medium text-base">الختيار بهاء</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 text-sm text-[#4E5969]">mohammed@example.com</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">0599999999</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">ذكر</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">اعزب</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">2002-05-15</td>
+                                    <td class="py-4 text-left relative">
+                                        <button
+                                            class="table-action-btn text-[#075E66] hover:underline text-sm cursor-pointer">
+                                            <i class="fa-solid fa-ellipsis-vertical"
+                                                style="color: rgb(124, 124, 124);"></i>
+                                        </button>
+                                        <div
+                                            class="table-action-menu hidden absolute left-1.5 bg-white pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl w-48 z-50">
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">مشاهدة التفاصيل</p>
+                                                <img src="../assets/images/customer-management/eye.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                                <img src="../assets/images/customer-management/edit-2.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <button
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                                <img src="../assets/images/customer-management/trash.png" alt=""
+                                                    class="w-5 h-5">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                    <td class="py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="../assets/images/customer-management/Frame 1300193088 (1).png"
+                                                alt="محمد ابو حليمة" class="w-9 h-9 rounded-full object-cover">
+                                            <span class="font-medium text-base">الختيار بهاء</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 text-sm text-[#4E5969]">mohammed@example.com</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">0599999999</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">ذكر</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">اعزب</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">2002-05-15</td>
+                                    <td class="py-4 text-left relative">
+                                        <button
+                                            class="table-action-btn text-[#075E66] hover:underline text-sm cursor-pointer">
+                                            <i class="fa-solid fa-ellipsis-vertical"
+                                                style="color: rgb(124, 124, 124);"></i>
+                                        </button>
+                                        <div
+                                            class="table-action-menu hidden absolute left-1.5 bg-white pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl w-48 z-50">
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">مشاهدة التفاصيل</p>
+                                                <img src="../assets/images/customer-management/eye.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                                <img src="../assets/images/customer-management/edit-2.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <button
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                                <img src="../assets/images/customer-management/trash.png" alt=""
+                                                    class="w-5 h-5">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                    <td class="py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="../assets/images/customer-management/Frame 1300193088 (1).png"
+                                                alt="محمد ابو حليمة" class="w-9 h-9 rounded-full object-cover">
+                                            <span class="font-medium text-base">الختيار بهاء</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 text-sm text-[#4E5969]">mohammed@example.com</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">0599999999</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">ذكر</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">اعزب</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">2002-05-15</td>
+                                    <td class="py-4 text-left relative">
+                                        <button
+                                            class="table-action-btn text-[#075E66] hover:underline text-sm cursor-pointer">
+                                            <i class="fa-solid fa-ellipsis-vertical"
+                                                style="color: rgb(124, 124, 124);"></i>
+                                        </button>
+                                        <div
+                                            class="table-action-menu hidden absolute left-1.5 bg-white pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl w-48 z-50">
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">مشاهدة التفاصيل</p>
+                                                <img src="../assets/images/customer-management/eye.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                                <img src="../assets/images/customer-management/edit-2.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <button
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                                <img src="../assets/images/customer-management/trash.png" alt=""
+                                                    class="w-5 h-5">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                    <td class="py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="../assets/images/customer-management/Frame 1300193088 (1).png"
+                                                alt="محمد ابو حليمة" class="w-9 h-9 rounded-full object-cover">
+                                            <span class="font-medium text-base">الختيار بهاء</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 text-sm text-[#4E5969]">mohammed@example.com</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">0599999999</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">ذكر</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">اعزب</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">2002-05-15</td>
+                                    <td class="py-4 text-left relative">
+                                        <button
+                                            class="table-action-btn text-[#075E66] hover:underline text-sm cursor-pointer">
+                                            <i class="fa-solid fa-ellipsis-vertical"
+                                                style="color: rgb(124, 124, 124);"></i>
+                                        </button>
+                                        <div
+                                            class="table-action-menu hidden absolute left-1.5 bg-white pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl w-48 z-50">
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">مشاهدة التفاصيل</p>
+                                                <img src="../assets/images/customer-management/eye.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                                <img src="../assets/images/customer-management/edit-2.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <button
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                                <img src="../assets/images/customer-management/trash.png" alt=""
+                                                    class="w-5 h-5">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-[#1D2129] hover:bg-[#FAFAFA] transition-colors relative">
+                                    <td class="py-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="../assets/images/customer-management/Frame 1300193088 (1).png"
+                                                alt="محمد ابو حليمة" class="w-9 h-9 rounded-full object-cover">
+                                            <span class="font-medium text-base">الختيار بهاء</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 text-sm text-[#4E5969]">mohammed@example.com</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">0599999999</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">ذكر</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">اعزب</td>
+                                    <td class="py-4 text-sm text-[#4E5969]">2002-05-15</td>
+                                    <td class="py-4 text-left relative">
+                                        <button
+                                            class="table-action-btn text-[#075E66] hover:underline text-sm cursor-pointer">
+                                            <i class="fa-solid fa-ellipsis-vertical"
+                                                style="color: rgb(124, 124, 124);"></i>
+                                        </button>
+                                        <div
+                                            class="table-action-menu hidden absolute left-1.5 bg-white pt-4 pb-4 border border-2 border-[#E5E6EB] rounded-xl w-48 z-50">
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">مشاهدة التفاصيل</p>
+                                                <img src="../assets/images/customer-management/eye.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <a href=""
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#86909C]">تعديل</p>
+                                                <img src="../assets/images/customer-management/edit-2.png" alt=""
+                                                    class="w-5 h-5">
+                                            </a>
+                                            <hr class="border border-[#E5E6EB] mt-3 mb-3 w-full">
+
+                                            <button
+                                                class="flex flex-row justify-between items-center pr-4 pl-4 w-full cursor-pointer">
+                                                <p class="font-medium text-base text-[#F76560]">حذف</p>
+                                                <img src="../assets/images/customer-management/trash.png" alt=""
+                                                    class="w-5 h-5">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="flex flex-row justify-center gap-5">
+                            <button class="w-10 h-7 bg-white flex justify-center items-center rounded-md cursor-pointer"
+                                id="next-r">
+                                <i class="fa-solid fa-angle-down fa-rotate-270 fa-xl"
+                                    style="color: rgb(7, 94, 102);"></i>
+                            </button>
+                            <button class="text-[#075E66]">1</button>
+                            <button class="text-[#86909C]">2</button>
+                            <div class="text-[#86909C] flex flex-row gap-3.5">
+                                <div>.</div>
+                                <div>.</div>
+                                <div>.</div>
+                            </div>
+                            <button class="text-[#86909C]">12</button>
+                            <button
+                                class="w-10 h-7 bg-white flex justify-center items-center rounded-md cursor-pointer">
+                                <i class="fa-solid fa-angle-down fa-rotate-90 fa-xl"
+                                    style="color: rgb(134, 144, 156);"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="customer-sorting-container"
+            class="hidden fixed inset-0 bg-[#81C6C3]/40 w-full h-full flex items-center justify-center">
+            <div id="customer-sorting-wrapper" class="bg-white shadow-lg rounded-xl  w-1/3 p-4 z-40">
+                <div class="info flex flex-row justify-between items-center pt-4 pb-4">
+                    <div class="flex flex-row items-center gap-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.3999 2.1001H18.5999C19.6999 2.1001 20.5999 3.0001 20.5999 4.1001V6.3001C20.5999 7.1001 20.0999 8.1001 19.5999 8.6001L15.2999 12.4001C14.6999 12.9001 14.2999 13.9001 14.2999 14.7001V19.0001C14.2999 19.6001 13.8999 20.4001 13.3999 20.7001L11.9999 21.6001C10.6999 22.4001 8.8999 21.5001 8.8999 19.9001V14.6001C8.8999 13.9001 8.4999 13.0001 8.0999 12.5001L4.2999 8.5001C3.7999 8.0001 3.3999 7.1001 3.3999 6.5001V4.2001C3.3999 3.0001 4.2999 2.1001 5.3999 2.1001Z"
+                                stroke="#075E66" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M10.93 2.1001L6 10.0001" stroke="#075E66" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p class="text-[#075E66] font-medium text-xl">فرز العملاء حسب</p>
+                    </div>
+                    <svg id="close-customer-sorting-btn" class="cursor-pointer" width="28" height="28"
+                        viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14.0002 25.6666C20.4168 25.6666 25.6668 20.4166 25.6668 13.9999C25.6668 7.58325 20.4168 2.33325 14.0002 2.33325C7.5835 2.33325 2.3335 7.58325 2.3335 13.9999C2.3335 20.4166 7.5835 25.6666 14.0002 25.6666Z"
+                            stroke="#F53F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.6982 17.3016L17.3016 10.6982" stroke="#F53F3F" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17.3016 17.3016L10.6982 10.6982" stroke="#F53F3F" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <form action="" method="" class="flex flex-col items-start gap-3">
+                    <div class="sex-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">الجنس</label>
+                        <select name="" id=""
+                            class=" text-[#86909C] font-light border border-[#e5ebe5] rounded-md w-full py-2 px-3 appearance-none focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out cursor-pointer">
+
+                            <option value="">الكل</option>
+                        </select>
+                        <span class="absolute left-2 top-12">
+                            <svg width="19" height="19" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.2802 5.96655L8.93355 10.3132C8.42021 10.8266 7.58022 10.8266 7.06688 10.3132L2.72021 5.96655"
+                                    stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="marital-status-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">الحالة الإجتماعية</label>
+                        <select name="" id=""
+                            class=" text-[#86909C] font-light border border-[#e5ebe5] rounded-md w-full py-2 px-3 appearance-none focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out cursor-pointer">
+
+                            <option value="">الكل</option>
+                        </select>
+                        <span class="absolute left-2 top-12">
+                            <svg width="19" height="19" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.2802 5.96655L8.93355 10.3132C8.42021 10.8266 7.58022 10.8266 7.06688 10.3132L2.72021 5.96655"
+                                    stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="date-of-birth-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">تاريخ الميلاد</label>
+                        <div
+                            class=" text-[#86909C] font-light border border-[#e5ebe5] rounded-md w-full py-2 px-3 cursor-pointer">
+
+                            <span>حدد التاريخ</span>
+                            <span class="absolute left-2 top-12">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.3335 1.83325V4.58325" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.6665 1.83325V4.58325" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3.2085 8.33252H18.7918" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M19.25 7.79159V15.5833C19.25 18.3333 17.875 20.1666 14.6667 20.1666H7.33333C4.125 20.1666 2.75 18.3333 2.75 15.5833V7.79159C2.75 5.04159 4.125 3.20825 7.33333 3.20825H14.6667C17.875 3.20825 19.25 5.04159 19.25 7.79159Z"
+                                        stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.3869 12.5584H14.3951" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.3869 15.3084H14.3951" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.9958 12.5584H11.004" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.9958 15.3084H11.004" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M7.6032 12.5584H7.61143" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M7.6032 15.3084H7.61143" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="account-opening-date-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">تاريخ فتح الحساب</label>
+                        <div
+                            class=" text-[#86909C] font-light border border-[#e5ebe5] rounded-md w-full py-2 px-3 appearance-none cursor-pointer">
+
+                            <span>من</span>
+                            <span class="absolute left-2 top-12">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.3335 1.83325V4.58325" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.6665 1.83325V4.58325" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3.2085 8.33252H18.7918" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M19.25 7.79159V15.5833C19.25 18.3333 17.875 20.1666 14.6667 20.1666H7.33333C4.125 20.1666 2.75 18.3333 2.75 15.5833V7.79159C2.75 5.04159 4.125 3.20825 7.33333 3.20825H14.6667C17.875 3.20825 19.25 5.04159 19.25 7.79159Z"
+                                        stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.3869 12.5584H14.3951" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.3869 15.3084H14.3951" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.9958 12.5584H11.004" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.9958 15.3084H11.004" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M7.6032 12.5584H7.61143" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M7.6032 15.3084H7.61143" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div
+                            class=" text-[#86909C] font-light border border-[#e5ebe5] rounded-md w-full py-2 px-3 cursor-pointer relative">
+
+                            <span>إلى</span>
+                            <span class="absolute left-2 top-3">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.3335 1.83325V4.58325" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.6665 1.83325V4.58325" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3.2085 8.33252H18.7918" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M19.25 7.79159V15.5833C19.25 18.3333 17.875 20.1666 14.6667 20.1666H7.33333C4.125 20.1666 2.75 18.3333 2.75 15.5833V7.79159C2.75 5.04159 4.125 3.20825 7.33333 3.20825H14.6667C17.875 3.20825 19.25 5.04159 19.25 7.79159Z"
+                                        stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.3869 12.5584H14.3951" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.3869 15.3084H14.3951" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.9958 12.5584H11.004" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.9958 15.3084H11.004" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M7.6032 12.5584H7.61143" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M7.6032 15.3084H7.61143" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="btns flex flex-row justify-between w-full">
+                        <button type="submit" id="show-results-btn"
+                            class="bg-[#075E66] rounded-md w-7/12 text-[#FFFFFF] h-10 mt-4 cursor-pointer transition-all duration-300 ease-in-out hover:scale-95">عرض
+                            النتائج</button>
+                        <button type="reset" id="reset-btn"
+                            class="bg-[#F9FAFB] rounded-md w-1/3  text-[#4E5969] h-10 mt-4 cursor-pointer">
+                            إعادة تعيين
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="add-client-container"
+            class="hidden fixed inset-0 bg-[#81C6C3]/40 w-full h-full flex items-center justify-center">
+            <div id="add-client-wrapper" class="bg-white shadow-lg rounded-xl  w-1/3 p-4 z-40">
+                <div class="info flex flex-row justify-between items-center pt-4 pb-4">
+                    <div class="flex flex-row items-center gap-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                                stroke="#075E66" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 12H16" stroke="#075E66" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12 16V8" stroke="#075E66" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <p class="text-[#075E66] font-medium text-xl">إضاقة عميل</p>
+                    </div>
+                    <svg id="close-add-client-btn" class="cursor-pointer" width="28" height="28" viewBox="0 0 28 28"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14.0002 25.6666C20.4168 25.6666 25.6668 20.4166 25.6668 13.9999C25.6668 7.58325 20.4168 2.33325 14.0002 2.33325C7.5835 2.33325 2.3335 7.58325 2.3335 13.9999C2.3335 20.4166 7.5835 25.6666 14.0002 25.6666Z"
+                            stroke="#F53F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.6982 17.3016L17.3016 10.6982" stroke="#F53F3F" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17.3016 17.3016L10.6982 10.6982" stroke="#F53F3F" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <form action="" method="" class="flex flex-col items-start gap-3">
+                    <div class="name-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">الإسم</label>
+                        <input type="text" placeholder="الإسم"
+                            class=" text-[#86909C] font-light placeholder:font-light placeholder:text-[#86909C] border border-[#e5ebe5] rounded-md w-full py-2 px-3 appearance-none focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out cursor-pointer">
+                        <svg class="absolute left-2 top-12" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.1098 11.7151C11.0457 11.7059 10.9632 11.7059 10.8898 11.7151C9.2765 11.6601 7.99316 10.3401 7.99316 8.7176C7.99316 7.05844 9.3315 5.71094 10.9998 5.71094C12.659 5.71094 14.0065 7.05844 14.0065 8.7176C13.9973 10.3401 12.7232 11.6601 11.1098 11.7151Z"
+                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M17.1784 17.7649C15.5468 19.2591 13.3834 20.1666 11.0001 20.1666C8.61678 20.1666 6.45344 19.2591 4.82178 17.7649C4.91344 16.9033 5.46344 16.0599 6.44428 15.3999C8.95594 13.7316 13.0626 13.7316 15.5559 15.3999C16.5368 16.0599 17.0868 16.9033 17.1784 17.7649Z"
+                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M11.0002 20.1666C16.0628 20.1666 20.1668 16.0625 20.1668 10.9999C20.1668 5.93731 16.0628 1.83325 11.0002 1.83325C5.93755 1.83325 1.8335 5.93731 1.8335 10.9999C1.8335 16.0625 5.93755 20.1666 11.0002 20.1666Z"
+                                stroke="#86909C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="mail-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">البريد الإلكتروني</label>
+                        <input type="text" placeholder="user.user@gmail.com"
+                            class=" text-[#86909C] font-light placeholder:font-light placeholder:text-[#86909C] border border-[#e5ebe5] rounded-md w-full py-2 px-3 appearance-none focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out cursor-pointer">
+                        <svg class="absolute left-2 top-12" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.5835 18.7916H6.41683C3.66683 18.7916 1.8335 17.4166 1.8335 14.2083V7.79159C1.8335 4.58325 3.66683 3.20825 6.41683 3.20825H15.5835C18.3335 3.20825 20.1668 4.58325 20.1668 7.79159V14.2083C20.1668 17.4166 18.3335 18.7916 15.5835 18.7916Z"
+                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M15.5832 8.25L12.714 10.5417C11.7698 11.2933 10.2207 11.2933 9.2765 10.5417L6.4165 8.25"
+                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="mail-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">رقم الجوال</label>
+                        <input type="text" placeholder="000 000 0000"
+                            class=" text-[#86909C] font-light placeholder:font-light placeholder:text-[#86909C] border border-[#e5ebe5] rounded-md w-full py-2 px-3 appearance-none focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out cursor-pointer">
+                        <svg class="absolute left-2 top-12" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20.1393 16.8024C20.1393 17.1324 20.066 17.4716 19.9102 17.8016C19.7543 18.1316 19.5527 18.4433 19.2868 18.7366C18.8377 19.2316 18.3427 19.5891 17.7835 19.8183C17.2335 20.0474 16.6377 20.1666 15.996 20.1666C15.061 20.1666 14.0618 19.9466 13.0077 19.4974C11.9535 19.0483 10.8993 18.4433 9.85433 17.6824C8.80016 16.9124 7.801 16.0599 6.84766 15.1158C5.9035 14.1624 5.051 13.1633 4.29016 12.1183C3.5385 11.0733 2.9335 10.0283 2.4935 8.99242C2.0535 7.94742 1.8335 6.94825 1.8335 5.99492C1.8335 5.37159 1.9435 4.77575 2.1635 4.22575C2.3835 3.66659 2.73183 3.15325 3.21766 2.69492C3.80433 2.11742 4.446 1.83325 5.12433 1.83325C5.381 1.83325 5.63766 1.88825 5.86683 1.99825C6.10516 2.10825 6.316 2.27325 6.481 2.51159L8.60766 5.50909C8.77266 5.73825 8.89183 5.94909 8.97433 6.15075C9.05683 6.34325 9.10266 6.53575 9.10266 6.70992C9.10266 6.92992 9.0385 7.14992 8.91016 7.36075C8.791 7.57159 8.61683 7.79159 8.39683 8.01159L7.70016 8.73575C7.59933 8.83659 7.5535 8.95575 7.5535 9.10242C7.5535 9.17575 7.56266 9.23992 7.581 9.31325C7.6085 9.38659 7.636 9.44159 7.65433 9.49659C7.81933 9.79909 8.1035 10.1933 8.50683 10.6699C8.91933 11.1466 9.35933 11.6324 9.836 12.1183C10.331 12.6041 10.8077 13.0533 11.2935 13.4658C11.7702 13.8691 12.1643 14.1441 12.476 14.3091C12.5218 14.3274 12.5768 14.3549 12.641 14.3824C12.7143 14.4099 12.7877 14.4191 12.8702 14.4191C13.026 14.4191 13.1452 14.3641 13.246 14.2633L13.9427 13.5758C14.1718 13.3466 14.3918 13.1724 14.6027 13.0624C14.8135 12.9341 15.0243 12.8699 15.2535 12.8699C15.4277 12.8699 15.611 12.9066 15.8127 12.9891C16.0143 13.0716 16.2252 13.1908 16.4543 13.3466L19.4885 15.5008C19.7268 15.6658 19.8918 15.8583 19.9927 16.0874C20.0843 16.3166 20.1393 16.5458 20.1393 16.8024Z"
+                                stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10" />
+                        </svg>
+                    </div>
+                    <div class="sex-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">الجنس</label>
+                        <select name="" id=""
+                            class=" text-[#86909C] font-light border border-[#e5ebe5] rounded-md w-full py-2 px-3 appearance-none focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out cursor-pointer">
+
+                            <option value="">حدد الجنس</option>
+                        </select>
+                        <span class="absolute left-2 top-12">
+                            <svg width="19" height="19" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.2802 5.96655L8.93355 10.3132C8.42021 10.8266 7.58022 10.8266 7.06688 10.3132L2.72021 5.96655"
+                                    stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="marital-status-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">الحالة الإجتماعية</label>
+                        <select name="" id=""
+                            class=" text-[#86909C] font-light border border-[#e5ebe5] rounded-md w-full py-2 px-3 appearance-none focus:outline-none focus:ring-1 focus:ring-[#c0c7c8] transition-all duration-300 ease-in-out cursor-pointer">
+
+                            <option value="">حدد الحالة الإجتماعية</option>
+                        </select>
+                        <span class="absolute left-2 top-12">
+                            <svg width="19" height="19" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.2802 5.96655L8.93355 10.3132C8.42021 10.8266 7.58022 10.8266 7.06688 10.3132L2.72021 5.96655"
+                                    stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="date-of-birth-field flex flex-col items-start gap-3 w-full relative">
+                        <label for="sex" class="text-[#1D2129]">تاريخ الميلاد</label>
+                        <div
+                            class=" text-[#86909C] font-light border border-[#e5ebe5] rounded-md w-full py-2 px-3 cursor-pointer">
+
+                            <span>حدد التاريخ</span>
+                            <span class="absolute left-2 top-12">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.3335 1.83325V4.58325" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.6665 1.83325V4.58325" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3.2085 8.33252H18.7918" stroke="#86909C" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M19.25 7.79159V15.5833C19.25 18.3333 17.875 20.1666 14.6667 20.1666H7.33333C4.125 20.1666 2.75 18.3333 2.75 15.5833V7.79159C2.75 5.04159 4.125 3.20825 7.33333 3.20825H14.6667C17.875 3.20825 19.25 5.04159 19.25 7.79159Z"
+                                        stroke="#86909C" stroke-width="1.5" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.3869 12.5584H14.3951" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.3869 15.3084H14.3951" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.9958 12.5584H11.004" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.9958 15.3084H11.004" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M7.6032 12.5584H7.61143" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M7.6032 15.3084H7.61143" stroke="#86909C" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="btns flex flex-row justify-between w-full">
+                        <button type="submit" id="save-btn"
+                            class="bg-[#075E66] rounded-md w-7/12 text-[#FFFFFF] h-10 mt-4 cursor-pointer transition-all duration-300 ease-in-out hover:scale-95">حفظ</button>
+                        <button type="reset" id="cancle-add-client-btn"
+                            class="bg-[#F9FAFB] rounded-md w-1/3  text-[#4E5969] h-10 mt-4 cursor-pointer ">
+                            إلغاء
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html> 
